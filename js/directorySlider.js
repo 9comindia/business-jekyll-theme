@@ -37,7 +37,7 @@
 	   var filelist = [];
 	   var slides = [];
 	
-	   var folder = "../assets/img/slider/";
+	   var folder = "img/";
 
 $.ajax({
     url : folder,
