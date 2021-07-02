@@ -46,12 +46,14 @@
 			success: function (data) {
 				$(data).find("a").attr("href", function (i, val) {
 				if( val.match(/\.(jpe?g|png|gif|jpg|JPG)$/) ) { 
-						slides.push('<img src='"+ folder + val +"' >" );
+						slides.push('<img src="'+ folder + val +'" />' );
 					} 
 				});
 				
 			}
 		});	
+	   
+
 	   
 	   				// append slideshow
 				    // apply slide wrap 1st
