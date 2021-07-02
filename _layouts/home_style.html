@@ -20,8 +20,17 @@
 	  <div class="directorySlider">
 <script>	
 	$(document).ready(function(){
-	$('.directorySlider').directorySlider();
-});
+	$('.directorySlider').directorySlider({
+	animation: 'uncover',
+	directory: '../assets/img/slider/',
+	extension: 'jpg',
+	numslides: 9,
+	filebase: 'slide_',
+	speed: 3000,
+	height: 480,
+	width: 640
+		});
+	});
 </script>
      </div>
 
