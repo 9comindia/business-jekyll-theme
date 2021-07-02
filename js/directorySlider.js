@@ -38,15 +38,21 @@
 	   var slides = [];
 	
 	   var folder = "img/";
+const express = require('express');
+const app = express();
+const path = require('path');
 
+// Allow assets directory listings
+const serveIndex = require('serve-index'); 
+app.use('/img', serveIndex(path.join(__dirname, '/img')));
 
 	   
 	   	$.ajax({
-			url : config.directory,
+			url : folder,
 			success: function (data) {
 				$(data).find("a").attr("href", function (i, val) {
 				if( val.match(/\.(jpe?g|png|gif|jpg|JPG)$/) ) { 
-						slides.push('<img src="'+ config.directory + val +'" />');
+						slides.push('<img src="'+ folder + val +'" />');
 					} 
 				});
 				
