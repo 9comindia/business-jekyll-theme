@@ -17,9 +17,11 @@
        var config = $.extend({
            animation: 'slide',
            speed: 1000,
-           timeout: 4000,
+           timeout: 3000,
            directory: '../assets/img/slider/',
-	    root: 'root',
+	   extension: 'jpg',
+	   numslides: 9,
+	   filebase: 'slide_',
            height: 480,
            width: 640
        }, options || {});
@@ -34,31 +36,13 @@
 
        $(elem).css('overflow', 'hidden');
 
-	   var filelist = [];
-	   var slides = [];
-	
-	   var folder = "img/";
-const express = require('express');
-const app = express();
-const path = require('path');
+	 var slides = [];
+	 var slideNumber = 1;
 
-// Allow assets directory listings
-const serveIndex = require('serve-index'); 
-app.use('/img', serveIndex(path.join(__dirname, '/img')));
-
-	   
-	   	$.ajax({
-			url : folder,
-			success: function (data) {
-				$(data).find("a").attr("href", function (i, val) {
-				if( val.match(/\.(jpe?g|png|gif|jpg|JPG)$/) ) { 
-						slides.push('<img src="'+ folder + val +'" />');
-					} 
-				});
-				
-			}
-		});	
-	   
+       while(slideNumber <= config.numslides){
+         slides.push('<img src="' + config.directory + config.filebase + slideNumber + '.' + config.extension + '" />');
+         slideNumber++;
+       }
 
 	   
 	   				// append slideshow
