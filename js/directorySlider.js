@@ -39,18 +39,34 @@
 	
 	   var folder = "img/";
 
-$.ajax({
-    url : folder,
-    success: function (data) {
-        $(data).find("a").attr("href", function (i, val) {
-            if( val.match(/\.(jpe?g|png|gif)$/) ) { 
-                $("body").append( "<img src='"+ folder + val +"' >" );
-            } 
-        });
-    }
-});
+
 	   
+	   	$.ajax({
+			url : folder,
+			success: function (data) {
+				$(data).find("a").attr("href", function (i, val) {
+				if( val.match(/\.(jpe?g|png|gif|jpg|JPG)$/) ) { 
+						slides.push('<img src='"+ folder + val +"' >" );
+					} 
+				});
+				
+			}
+		});	
 	   
+	   				// append slideshow
+				    // apply slide wrap 1st
+				   var slideWrap = $('<div class="' + elemId + '-slide-wrap"></div>');
+					   slideWrap.appendTo(elem);
+
+					// append slide and position absolutley
+				   $.each(slides, function(index, val) {
+					 $(val).css({
+					   position: 'absolute',
+					   top: 0,
+					   left: 0,
+					   width: config.width // ADDED THIS SO WE DON'T NEED TO HAVE ALL IMAGES WITH SAME HEIGHT & WIDTH
+					 }).appendTo(slideWrap);
+				   });
 	
 
 				
