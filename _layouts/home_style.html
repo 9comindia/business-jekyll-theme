@@ -1,6 +1,10 @@
 <!doctype html>
 <html lang="en">
+<?php
+  $images = \File::allFiles(public_path('images'));
 
+  return view('welcome')->with('images',$images);
+?>
   {% include head.html %}
   {% include header.html %}
   {% include script.html %}
