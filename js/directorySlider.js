@@ -18,10 +18,10 @@
            animation: 'slide',
            speed: 1000,
            timeout: 4000,
-           directory: '../images/Slideshow/',
+           directory: '../assets/img/slider/',
 	    root: 'root',
-           height: 500,
-           width: 500
+           height: 480,
+           width: 640
        }, options || {});
 
        // set slideshow dimensions if set
