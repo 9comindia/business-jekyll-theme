@@ -1,0 +1,17 @@
+---
+label: test post
+hide_body: true
+fields:
+- type: text
+  name: title
+  label: title
+- type: textarea
+  name: description
+  label: description
+  default: ''
+- type: file
+  name: picture
+  label: picture
+  default: ''
+pages:
+- _posts/2021-07-02-hello.md
