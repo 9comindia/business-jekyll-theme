@@ -42,15 +42,12 @@
 			success: function (data) {
 				$(data).find("a").attr("href", function (i, val) {
 				if( val.match(/\.(jpe?g|png|gif|jpg|JPG)$/) ) { 
-						slides.push("<img src=""+ config.root + val +"">" );
+						slides.push('<img src="'+ config.root + val +'" />' );
 					} 
 				}
 				);
 				
-	while(slideNumber <= config.numslides){
-         slides.push('<img src="' + config.directory + config.filebase + slideNumber + '.' + config.extension + '" />');
-         slideNumber++;
-       }
+
 				
 					// append slideshow
 				    // apply slide wrap 1st
