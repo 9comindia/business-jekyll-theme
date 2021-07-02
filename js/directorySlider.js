@@ -37,19 +37,21 @@
 	   var filelist = [];
 	   var slides = [];
 	
+	   var folder = "../assets/img/slider/";
 
-	   
 $.ajax({
-			url : config.directory,
-			success: function (data) {
-				$(data).find("a").attr("href", function (i, val) {
-				if( val.match(/\.(jpe?g|png|gif|jpg|JPG)$/) ) { 
-						slides.push('<img src='"+ config.directory + val +"' />" );
-					} 
-				});
-				
-			}
-		});		
+    url : folder,
+    success: function (data) {
+        $(data).find("a").attr("href", function (i, val) {
+            if( val.match(/\.(jpe?g|png|gif)$/) ) { 
+                $("body").append( "<img src='"+ folder + val +"'>" );
+            } 
+        });
+    }
+});
+	   
+	   
+	
 
 				
 					// append slideshow
