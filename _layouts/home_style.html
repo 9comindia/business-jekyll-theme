@@ -29,8 +29,15 @@
 	  <div class="directorySlider">
 <script>	
 	$(document).ready(function(){
-	$('.directorySlider').directorySlider();
-	});
+	$('.directorySlider').directorySlider({
+	animation: 'fade',
+	directory: '../assets/img/slider/',
+	extension: 'jpg',
+	numslides: 9,
+	filebase: 'slide_',
+	speed: 3000,
+	width: 640,
+	height: 480
 </script>
      </div>	    
                       
