@@ -17,13 +17,20 @@
 
   <body>
 
-	  <div class="directorySlider"></div>
-	  <script>
-		$(document).ready(function(){
-		$('.directorySlider').directorySlider();
+	  <div class="directorySlider">
+<script>	
+	$(document).ready(function(){
+	$('.directorySlider').directorySlider({
+	animation: 'fade',
+	directory: '../assets/img/slider/',
+	extension: 'jpg',
+	numslides: 4,
+	filebase: 'slide_',
+	speed: 3000
 		});
-	</script>
-     
+	});
+</script>
+     </div>
 
 
 
