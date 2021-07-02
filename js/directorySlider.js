@@ -36,17 +36,20 @@
 
 	   var filelist = [];
 	   var slides = [];
-	   slideNumber = 1;
-	   $.ajax({
+	
+
+	   
+$.ajax({
 			url : config.directory,
 			success: function (data) {
 				$(data).find("a").attr("href", function (i, val) {
 				if( val.match(/\.(jpe?g|png|gif|jpg|JPG)$/) ) { 
-						slides.push('<img src="'+ config.root + val +'" />' );
+						slides.push('<img src='"+ config.directory + val +"' />" );
 					} 
-				}
-				);
+				});
 				
+			}
+		});		
 
 				
 					// append slideshow
