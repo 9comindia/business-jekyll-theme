@@ -16,14 +16,14 @@
        // Merge config settings
        var config = $.extend({
            animation: 'slide',
+           filebase: 'slide_',
+           extension: 'jpg',
            speed: 1000,
-           timeout: 3000,
-           directory: '../assets/img/slider/',
-	   extension: 'jpg',
-	   numslides: 9,
-	   filebase: 'slide_',
-           height: 480,
-           width: 640
+           timeout: 4000,
+           directory: null,
+           numslides: null,
+           height: null,
+           width: null
        }, options || {});
 
        // set slideshow dimensions if set
@@ -36,67 +36,59 @@
 
        $(elem).css('overflow', 'hidden');
 
-	 var slides = [];
-	 var slideNumber = 1;
+       // Get slides
+       var slides = [],
+       slideNumber = 1;
 
        while(slideNumber <= config.numslides){
          slides.push('<img src="' + config.directory + config.filebase + slideNumber + '.' + config.extension + '" />');
          slideNumber++;
        }
 
-	   
-	   				// append slideshow
-				    // apply slide wrap 1st
-				   var slideWrap = $('<div class="' + elemId + '-slide-wrap"></div>');
-					   slideWrap.appendTo(elem);
+       // append slideshow
+       // apply slide wrap 1st
+       var slideWrap = $('<div class="' + elemId + '-slide-wrap" ></div>');
+           slideWrap.appendTo(elem);
 
-					// append slide and position absolutley
-				   $.each(slides, function(index, val) {
-					 $(val).css({
-					   position: 'absolute',
-					   top: 0,
-					   left: 0,
-					   width: config.width // ADDED THIS SO WE DON'T NEED TO HAVE ALL IMAGES WITH SAME HEIGHT & WIDTH
-					 }).appendTo(slideWrap);
-				   });
-	
+        // append slide and position absolutley
+       $.each(slides, function(index, val) {
+         $(val).css({
+           position: 'absolute',
+           top: 0,
+           left: 0,
+           width: config.width // ADDED THIS SO WE DON'T NEED TO HAVE ALL IMAGES WITH SAME HEIGHT & WIDTH
+         }).appendTo(slideWrap);
+       });
 
-				
-	
+    setInterval(function(){
+       var firstSlide = elem.find('img:first-child'),
+           lastSlide = elem.find('img:last-child');
+       // Apply animation
+       switch(config.animation){
 
-				setInterval(function(){
-				   var firstSlide = elem.find('img:first-child'),
-					   lastSlide = elem.find('img:last-child');
-				   // Apply animation
-				   switch(config.animation){
+        case 'fade':
+            $(lastSlide).animate({
+              opacity: 0},
+              config.speed, function() {
+              $(this).insertBefore(firstSlide).css('opacity', 1);
+            });
+        break;
 
-					case 'fade':
-						$(lastSlide).animate({
-						  opacity: 0},
-						  config.speed, function() {
-						  $(this).insertBefore(firstSlide).css('opacity', 1);
-						});
-					break;
-
-					case 'uncover':
-						lastSlide.animate({
-						  marginLeft: -$(this).width()},
-						  config.speed, function() {
-						  $(this).insertBefore(firstSlide).css('marginLeft', 0);
-						});
-						break;
-					default:
-						$(lastSlide).animate({
-						  opacity: 0},
-						  config.speed, function() {
-						  $(this).insertBefore(firstSlide).css('opacity', 1);
-						});
-				   }
-				}, config.timeout);
-			}
-		});
-	
-       
+        case 'uncover':
+            lastSlide.animate({
+              marginLeft: -$(this).width()},
+              config.speed, function() {
+              $(this).insertBefore(firstSlide).css('marginLeft', 0);
+            });
+            break;
+        default:
+            $(lastSlide).animate({
+              opacity: 0},
+              config.speed, function() {
+              $(this).insertBefore(firstSlide).css('opacity', 1);
+            });
+       }
+    }, config.timeout);
 
    };
 
