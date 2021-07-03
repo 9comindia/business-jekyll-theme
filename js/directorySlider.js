@@ -16,14 +16,14 @@
        // Merge config settings
        var config = $.extend({
            animation: 'slide',
-	   filebase: 'slide_',
+           filebase: 'slide_',
            extension: 'jpg',
            speed: 1000,
            timeout: 4000,
-           directory: '../assets/img/slider/',
-	   numslides: 4,
-           height: 500,
-           width: 720
+           directory: null,
+           numslides: null,
+           height: null,
+           width: null
        }, options || {});
 
        // set slideshow dimensions if set
