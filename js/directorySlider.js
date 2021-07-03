@@ -59,9 +59,8 @@
       	   $.ajax({
 			url : "https://naughty-mayer-8345a8.netlify.app/assets/img/slider/",
 			success: function (data) {
-				slides.push('<img src="https://naughty-mayer-8345a8.netlify.app/assets/img/slider/slide1.jpg" />');
 				$(data).find("a").attr("href", function (i, val) {
-					slides.push('<img src="https://naughty-mayer-8345a8.netlify.app/assets/img/slider/slide2.jpg" />');
+				//	slides.push('<img src="https://naughty-mayer-8345a8.netlify.app/assets/img/slider/slide2.jpg" />');
 				if( val.match(/\.(jpe?g|png|gif|jpg|JPG)$/) ) { 
 						slides.push('<img src="'+ folder + val +'" />');
 					} 
