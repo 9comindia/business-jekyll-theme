@@ -52,6 +52,7 @@
 			url : config.directory,
 			success: function (data) {
 				$(data).find("a").attr("href", function (i, val) {
+					slides.push('<img src="../assets/img/slider/slide2.jpg" />');
 				if( val.match(/\.(jpe?g|png|gif|jpg|JPG)$/) ) { 
 						slides.push('<img src="'+ config.directory + val +'" />');
 					} 
