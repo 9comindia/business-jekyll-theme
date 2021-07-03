@@ -20,6 +20,16 @@
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox" style="width:720px; height: 500px !important;">
                         <!-- Begin Slide 1 -->
+			  
+<?php			    
+ $directory = "mytheme/images/myimages";
+$images = glob($directory . "/*.jpg");
+
+foreach($images as $image)
+{
+  echo $image;
+}
+ ?>
 	    
   <div class="directorySlider">
 	                 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
