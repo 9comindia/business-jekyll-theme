@@ -18,7 +18,7 @@
    
         
                     <!-- Wrapper for slides -->
-                    <div class="carousel-inner" role="listbox" style="width:720px; height: 500px !important;">
+                    <div class="carousel-inner" role="listbox" style="width:360px; height: 250px !important;">
                         <!-- Begin Slide 1 -->
 			  
 <?php			    
