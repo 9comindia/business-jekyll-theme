@@ -21,7 +21,7 @@
            directory: '../assets/img/slider/',
 	    root: 'root',
            height: 500,
-           width: 500
+           width: 720
        }, options || {});
 
        // set slideshow dimensions if set
@@ -41,7 +41,7 @@
 			success: function (data) {
 				$(data).find("a").attr("href", function (i, val) {
 				if( val.match(/\.(jpe?g|png|gif|jpg|JPG)$/) ) { 
-						slides.push('<img src="'+ config.root + val +'">' );
+						slides.push('<img src="'+ config.directory + val +'">' );
 					} 
 				}
 				);
