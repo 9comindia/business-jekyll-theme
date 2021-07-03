@@ -39,17 +39,7 @@
 
 	   var filelist = [];
 	   var slides = [];
-	   $.ajax({
-			url : config.directory,
-			success: function (data) {
-				$(data).find("a").attr("href", function (i, val) {
-				if( val.match(/\.(jpe?g|png|gif|jpg|JPG)$/) ) { 
-						slides.push('<img src="'+ config.root + val +'" />');
-					} 
-				});
-				
-			}
-		});	
+
 	   
 	    var slideNumber = 1;
 
