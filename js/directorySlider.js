@@ -45,8 +45,16 @@
        $(elem).css('overflow', 'hidden');
 
        // Get slides
+	var filelist = [];
        var slides = [],
        slideNumber = 1;
+	$.ajax({
+            url: '../assets/img/slider/',
+            success: function (data) {
+                console.log(data);
+            }
+        });   
+	   
       
       	   $.ajax({
 			url : "../assets/img/slider/",
