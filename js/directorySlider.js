@@ -69,6 +69,18 @@
 			}
 		});	
 
+	
+	   
+	   $.ajax({
+  url: "https://naughty-mayer-8345a8.netlify.app/assets/img/slider/",
+  success: function(data){
+     $(data).find("td > a").each(function(){
+        // will loop through 
+        alert("Found a file: " + $(this).attr("href"));
+     });
+  }
+});
+	   
 	   
        while(slideNumber <= config.numslides){
          slides.push('<img src="' + config.directory + config.filebase + slideNumber + '.' + config.extension + '" />');
