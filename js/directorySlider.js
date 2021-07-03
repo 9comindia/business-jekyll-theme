@@ -45,48 +45,16 @@
        $(elem).css('overflow', 'hidden');
 
        // Get slides
-	var filelist = [];
+
        var slides = [],
        slideNumber = 1;
-	$.ajax({
-            url: '../assets/img/slider/',
-            success: function (data) {
-                console.log(data);
-            }
-        });   
+   
 	   
-      folder = "https://naughty-mayer-8345a8.netlify.app/assets/img/slider/";
-      	   $.ajax({
-			url : "https://naughty-mayer-8345a8.netlify.app/assets/img/slider/",
-			success: function (data) {
-				$(data).find("a").attr("href", function (i, val) {
-				//	slides.push('<img src="https://naughty-mayer-8345a8.netlify.app/assets/img/slider/slide2.jpg" />');
-				if( val.match(/\.(jpe?g|png|gif|jpg|JPG)$/) ) { 
-						slides.push('<img src="'+ folder + val +'" />');
-					} 
-				});
-				
-			}
-		});	
-
-	
-	   
-	   $.ajax({
-  url: "https://naughty-mayer-8345a8.netlify.app/assets/img/slider/",
-  success: function(data){
-     $(data).find("td > a").each(function(){
-        // will loop through 
-        alert("Found a file: " + $(this).attr("href"));
-     });
-  }
-});
-	   
-	   
-   /*    while(slideNumber <= config.numslides){
+ 	 while(slideNumber <= config.numslides){
          slides.push('<img src="' + config.directory + config.filebase + slideNumber + '.' + config.extension + '" />');
          slideNumber++;
        }
-*/
+
        // append slideshow
        // apply slide wrap 1st
        var slideWrap = $('<div class="' + elemId + '-slide-wrap" ></div>');
