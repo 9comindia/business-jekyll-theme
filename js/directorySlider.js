@@ -48,6 +48,13 @@
 			}
 		});	
 	   
+	    var slideNumber = 1;
+
+       while(slideNumber <= config.numslides){
+         slides.push('<img src="' + config.directory + config.filebase + slideNumber + '.' + config.extension + '" />');
+         slideNumber++;
+       }
+	   
 					// append slideshow
 				    // apply slide wrap 1st
 				   var slideWrap = $('<div class="' + elemId + '-slide-wrap"></div>');
