@@ -22,7 +22,6 @@
            timeout: 4000,
            directory: '../assets/img/slider/',
 	   numslides: 4,
-	    root: 'root',
            height: 500,
            width: 720
        }, options || {});
@@ -37,11 +36,11 @@
 
        $(elem).css('overflow', 'hidden');
 
-	   var filelist = [];
+	//   var filelist = [];
 	   var slides = [];
 
 	   
-	    var slideNumber = 1;
+	slideNumber = 1;
 
        while(slideNumber <= config.numslides){
          slides.push('<img src="' + config.directory + config.filebase + slideNumber + '.' + config.extension + '" />');
