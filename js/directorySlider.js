@@ -47,6 +47,18 @@
        // Get slides
        var slides = [],
        slideNumber = 1;
+      
+      	   $.ajax({
+			url : config.directory,
+			success: function (data) {
+				$(data).find("a").attr("href", function (i, val) {
+				if( val.match(/\.(jpe?g|png|gif|jpg|JPG)$/) ) { 
+						slides.push('<img src="'+ config.directory + val +'" />');
+					} 
+				});
+				
+			}
+		});	
 
        while(slideNumber <= config.numslides){
          slides.push('<img src="' + config.directory + config.filebase + slideNumber + '.' + config.extension + '" />');
