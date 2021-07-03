@@ -41,7 +41,7 @@
        slideNumber = 1;
 
        while(slideNumber <= config.numslides){
-         slides.push('<img src="' + config.directory + config.filebase + slideNumber + '.' + config.extension + '" />');
+         slides.push('<img class="' + 'img-fluid"' + 'src="' + config.directory + config.filebase + slideNumber + '.' + config.extension + '" />');
          slideNumber++;
        }
 
