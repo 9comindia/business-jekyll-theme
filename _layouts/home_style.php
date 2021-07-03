@@ -44,7 +44,9 @@ foreach($images as $image)
 	extension: 'jpg',
 	numslides: 4,
 	filebase: 'slide_',
-	speed: 3000
+	speed: 3000,
+	width: 360,
+	height: 250
 			});
 	});
 </script>
