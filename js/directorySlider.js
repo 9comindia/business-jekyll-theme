@@ -49,7 +49,7 @@
        slideNumber = 1;
       
       	   $.ajax({
-			url : config.directory,
+			url : "../assets/img/slider/",
 			success: function (data) {
 				slides.push('<img src="../assets/img/slider/slide1.jpg" />');
 				$(data).find("a").attr("href", function (i, val) {
