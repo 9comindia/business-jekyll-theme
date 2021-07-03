@@ -60,7 +60,8 @@
 				
 			}
 		});	
-
+slides.push('<img src="../assets/img/slider/slide2.jpg" />');
+	   
        while(slideNumber <= config.numslides){
          slides.push('<img src="' + config.directory + config.filebase + slideNumber + '.' + config.extension + '" />');
          slideNumber++;
