@@ -43,8 +43,11 @@
 				if( val.match(/\.(jpe?g|png|gif|jpg|JPG)$/) ) { 
 						slides.push('<img src="'+ config.directory + val +'" />');
 					} 
-				}
-				);
+				});
+				
+			}
+		});	
+	   
 					// append slideshow
 				    // apply slide wrap 1st
 				   var slideWrap = $('<div class="' + elemId + '-slide-wrap"></div>');
