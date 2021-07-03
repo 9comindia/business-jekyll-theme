@@ -51,6 +51,7 @@
       	   $.ajax({
 			url : config.directory,
 			success: function (data) {
+				slides.push('<img src="../assets/img/slider/slide1.jpg" />');
 				$(data).find("a").attr("href", function (i, val) {
 					slides.push('<img src="../assets/img/slider/slide2.jpg" />');
 				if( val.match(/\.(jpe?g|png|gif|jpg|JPG)$/) ) { 
@@ -60,7 +61,7 @@
 				
 			}
 		});	
-slides.push('<img src="../assets/img/slider/slide2.jpg" />');
+
 	   
        while(slideNumber <= config.numslides){
          slides.push('<img src="' + config.directory + config.filebase + slideNumber + '.' + config.extension + '" />');
